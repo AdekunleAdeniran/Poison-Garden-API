@@ -50,7 +50,7 @@ class InsecureUserResource(Resource):
         user_data = cursor.fetchone()
 
         if user_data:
-            return {'id': user_data[0], 'username': user_data[1]}
+            return {'id': user_data[0], 'username': user_data[1], 'password': user_data[2]}
         else:
             return {'message': 'User not found'}, 404
 
